@@ -1,0 +1,1972 @@
+In the table below the contents of the telemetry packet is outlined. Each entry has its own name, type,
+minimum and maximum value (if applicable), samples-per-frame (spf), size, description, and units. It is
+notable that the byte transmission uses little endian system.
+Note: All * table items are only valid when connected to a calibration table and are empty otherwise.
+
+12
+
+© 2024 StarSpec Technologies Inc. All rights reserved.
+
+Name
+
+Type
+
+(min/max)
+
+Spf
+
+Start Byte
+
+Bytes
+
+Description
+
+Units
+
+v x1 pss 0
+
+d
+
+(0.0, 50.0)
+
+1
+
+0
+
+8
+
+Voltage
+
+V
+
+v x2 pss 0
+
+d
+
+(0.0, 50.0)
+
+1
+
+8
+
+8
+
+Voltage
+
+V
+
+v y1 pss 0
+
+d
+
+(0.0, 50.0)
+
+1
+
+16
+
+8
+
+Voltage
+
+V
+
+v y2 pss 0
+
+d
+
+(0.0, 50.0)
+
+1
+
+24
+
+8
+
+Voltage
+
+V
+
+v sum pss 0
+
+d
+
+(0.0, 50.0)
+
+1
+
+32
+
+8
+
+Voltage
+
+V
+
+thresh pss 0
+
+d
+
+(0.0, 10.0)
+
+1
+
+40
+
+8
+
+–
+
+–
+
+radius pss 0
+
+d
+
+(0.0, 20.0)
+
+1
+
+48
+
+8
+
+–
+
+–
+
+good pss 0
+
+c
+
+–
+
+1
+
+56
+
+1
+
+–
+
+–
+
+x raw pss 0
+
+d
+
+–
+
+1
+
+57
+
+8
+
+–
+
+–
+
+y raw pss 0
+
+d
+
+–
+
+1
+
+65
+
+8
+
+–
+
+–
+
+x corr pss 0
+
+d
+
+–
+
+1
+
+73
+
+8
+
+–
+
+–
+
+y corr pss 0
+
+d
+
+–
+
+1
+
+81
+
+8
+
+–
+
+–
+
+az pss 0
+
+d
+
+(0.0, 360.0)
+
+1
+
+89
+
+8
+
+Angle
+
+deg
+
+el pss 0
+
+d
+
+(0.0, 360.0)
+
+1
+
+97
+
+8
+
+Angle
+
+deg
+
+valid pss 0
+
+c
+
+–
+
+1
+
+105
+
+1
+
+–
+
+–
+
+v x1 pss 1
+
+d
+
+(0.0, 50.0)
+
+1
+
+106
+
+8
+
+Voltage
+
+V
+
+v x2 pss 1
+
+d
+
+(0.0, 50.0)
+
+1
+
+114
+
+8
+
+Voltage
+
+V
+
+v y1 pss 1
+
+d
+
+(0.0, 50.0)
+
+1
+
+122
+
+8
+
+Voltage
+
+V
+
+v y2 pss 1
+
+d
+
+(0.0, 50.0)
+
+1
+
+130
+
+8
+
+Voltage
+
+V
+
+v sum pss 1
+
+d
+
+(0.0, 50.0)
+
+1
+
+138
+
+8
+
+Voltage
+
+V
+
+thresh pss 1
+
+d
+
+(0.0, 10.0)
+
+1
+
+146
+
+8
+
+–
+
+–
+
+radius pss 1
+
+d
+
+(0.0, 20.0)
+
+1
+
+154
+
+8
+
+–
+
+–
+
+good pss 1
+
+c
+
+–
+
+1
+
+162
+
+1
+
+–
+
+–
+
+x raw pss 1
+
+d
+
+–
+
+1
+
+163
+
+8
+
+–
+
+–
+
+y raw pss 1
+
+d
+
+–
+
+1
+
+171
+
+8
+
+–
+
+–
+
+x corr pss 1
+
+d
+
+–
+
+1
+
+179
+
+8
+
+–
+
+–
+
+y corr pss 1
+
+d
+
+–
+
+1
+
+187
+
+8
+
+–
+
+–
+
+az pss 1
+
+d
+
+(0.0, 360.0)
+
+1
+
+195
+
+8
+
+Angle
+
+deg
+
+el pss 1
+
+d
+
+(0.0, 360.0)
+
+1
+
+203
+
+8
+
+Angle
+
+deg
+
+valid pss 1
+
+c
+
+–
+
+1
+
+211
+
+1
+
+–
+
+–
+
+v x1 pss 2
+
+d
+
+(0.0, 50.0)
+
+1
+
+212
+
+8
+
+Voltage
+
+V
+
+v x2 pss 2
+
+d
+
+(0.0, 50.0)
+
+1
+
+220
+
+8
+
+Voltage
+
+V
+
+13
+
+© 2024 StarSpec Technologies Inc. All rights reserved.
+
+v y1 pss 2
+
+d
+
+(0.0, 50.0)
+
+1
+
+228
+
+8
+
+Voltage
+
+V
+
+v y2 pss 2
+
+d
+
+(0.0, 50.0)
+
+1
+
+236
+
+8
+
+Voltage
+
+V
+
+v sum pss 2
+
+d
+
+(0.0, 50.0)
+
+1
+
+244
+
+8
+
+Voltage
+
+V
+
+thresh pss 2
+
+d
+
+(0.0, 10.0)
+
+1
+
+252
+
+8
+
+–
+
+–
+
+radius pss 2
+
+d
+
+(0.0, 20.0)
+
+1
+
+260
+
+8
+
+–
+
+–
+
+good pss 2
+
+c
+
+–
+
+1
+
+268
+
+1
+
+–
+
+–
+
+x raw pss 2
+
+d
+
+–
+
+1
+
+269
+
+8
+
+–
+
+–
+
+y raw pss 2
+
+d
+
+–
+
+1
+
+277
+
+8
+
+–
+
+–
+
+x corr pss 2
+
+d
+
+–
+
+1
+
+285
+
+8
+
+–
+
+–
+
+y corr pss 2
+
+d
+
+–
+
+1
+
+293
+
+8
+
+–
+
+–
+
+az pss 2
+
+d
+
+(0.0, 360.0)
+
+1
+
+301
+
+8
+
+Angle
+
+deg
+
+el pss 2
+
+d
+
+(0.0, 360.0)
+
+1
+
+309
+
+8
+
+Angle
+
+deg
+
+valid pss 2
+
+c
+
+–
+
+1
+
+317
+
+1
+
+–
+
+–
+
+v x1 pss 3
+
+d
+
+(0.0, 50.0)
+
+1
+
+318
+
+8
+
+Voltage
+
+V
+
+v x2 pss 3
+
+d
+
+(0.0, 50.0)
+
+1
+
+326
+
+8
+
+Voltage
+
+V
+
+v y1 pss 3
+
+d
+
+(0.0, 50.0)
+
+1
+
+334
+
+8
+
+Voltage
+
+V
+
+v y2 pss 3
+
+d
+
+(0.0, 50.0)
+
+1
+
+342
+
+8
+
+Voltage
+
+V
+
+v sum pss 3
+
+d
+
+(0.0, 50.0)
+
+1
+
+350
+
+8
+
+Voltage
+
+V
+
+thresh pss 3
+
+d
+
+(0.0, 10.0)
+
+1
+
+358
+
+8
+
+–
+
+–
+
+radius pss 3
+
+d
+
+(0.0, 20.0)
+
+1
+
+366
+
+8
+
+–
+
+–
+
+good pss 3
+
+c
+
+–
+
+1
+
+374
+
+1
+
+–
+
+–
+
+x raw pss 3
+
+d
+
+–
+
+1
+
+375
+
+8
+
+–
+
+–
+
+y raw pss 3
+
+d
+
+–
+
+1
+
+383
+
+8
+
+–
+
+–
+
+x corr pss 3
+
+d
+
+–
+
+1
+
+391
+
+8
+
+–
+
+–
+
+y corr pss 3
+
+d
+
+–
+
+1
+
+399
+
+8
+
+–
+
+–
+
+az pss 3
+
+d
+
+(0.0, 360.0)
+
+1
+
+407
+
+8
+
+Angle
+
+deg
+
+el pss 3
+
+d
+
+(0.0, 360.0)
+
+1
+
+415
+
+8
+
+Angle
+
+deg
+
+valid pss 3
+
+c
+
+–
+
+1
+
+423
+
+1
+
+–
+
+–
+
+v x1 pss 4
+
+d
+
+(0.0, 50.0)
+
+1
+
+424
+
+8
+
+Voltage
+
+V
+
+v x2 pss 4
+
+d
+
+(0.0, 50.0)
+
+1
+
+432
+
+8
+
+Voltage
+
+V
+
+v y1 pss 4
+
+d
+
+(0.0, 50.0)
+
+1
+
+440
+
+8
+
+Voltage
+
+V
+
+v y2 pss 4
+
+d
+
+(0.0, 50.0)
+
+1
+
+448
+
+8
+
+Voltage
+
+V
+
+14
+
+© 2024 StarSpec Technologies Inc. All rights reserved.
+
+v sum pss 4
+
+d
+
+(0.0, 50.0)
+
+1
+
+456
+
+8
+
+Voltage
+
+V
+
+thresh pss 4
+
+d
+
+(0.0, 10.0)
+
+1
+
+464
+
+8
+
+–
+
+–
+
+radius pss 4
+
+d
+
+(0.0, 20.0)
+
+1
+
+472
+
+8
+
+–
+
+–
+
+good pss 4
+
+c
+
+–
+
+1
+
+480
+
+1
+
+–
+
+–
+
+x raw pss 4
+
+d
+
+–
+
+1
+
+481
+
+8
+
+–
+
+–
+
+y raw pss 4
+
+d
+
+–
+
+1
+
+489
+
+8
+
+–
+
+–
+
+x corr pss 4
+
+d
+
+–
+
+1
+
+497
+
+8
+
+–
+
+–
+
+y corr pss 4
+
+d
+
+–
+
+1
+
+505
+
+8
+
+–
+
+–
+
+az pss 4
+
+d
+
+(0.0, 360.0)
+
+1
+
+513
+
+8
+
+Angle
+
+deg
+
+el pss 4
+
+d
+
+(0.0, 360.0)
+
+1
+
+521
+
+8
+
+Angle
+
+deg
+
+valid pss 4
+
+c
+
+–
+
+1
+
+529
+
+1
+
+–
+
+–
+
+v x1 pss 5
+
+d
+
+(0.0, 50.0)
+
+1
+
+530
+
+8
+
+Voltage
+
+V
+
+v x2 pss 5
+
+d
+
+(0.0, 50.0)
+
+1
+
+538
+
+8
+
+Voltage
+
+V
+
+v y1 pss 5
+
+d
+
+(0.0, 50.0)
+
+1
+
+546
+
+8
+
+Voltage
+
+V
+
+v y2 pss 5
+
+d
+
+(0.0, 50.0)
+
+1
+
+554
+
+8
+
+Voltage
+
+V
+
+v sum pss 5
+
+d
+
+(0.0, 50.0)
+
+1
+
+562
+
+8
+
+Voltage
+
+V
+
+thresh pss 5
+
+d
+
+(0.0, 10.0)
+
+1
+
+570
+
+8
+
+–
+
+–
+
+radius pss 5
+
+d
+
+(0.0, 20.0)
+
+1
+
+578
+
+8
+
+–
+
+–
+
+good pss 5
+
+c
+
+–
+
+1
+
+586
+
+1
+
+–
+
+–
+
+x raw pss 5
+
+d
+
+–
+
+1
+
+587
+
+8
+
+–
+
+–
+
+y raw pss 5
+
+d
+
+–
+
+1
+
+595
+
+8
+
+–
+
+–
+
+x corr pss 5
+
+d
+
+–
+
+1
+
+603
+
+8
+
+–
+
+–
+
+y corr pss 5
+
+d
+
+–
+
+1
+
+611
+
+8
+
+–
+
+–
+
+az pss 5
+
+d
+
+(0.0, 360.0)
+
+1
+
+619
+
+8
+
+Angle
+
+deg
+
+el pss 5
+
+d
+
+(0.0, 360.0)
+
+1
+
+627
+
+8
+
+Angle
+
+deg
+
+valid pss 5
+
+c
+
+–
+
+1
+
+635
+
+1
+
+–
+
+–
+
+boxcar size adc 0
+
+u
+
+(1.0, 1000.0)
+
+1
+
+636
+
+2
+
+–
+
+–
+
+boxcar size adc 1
+
+u
+
+(1.0, 1000.0)
+
+1
+
+638
+
+2
+
+–
+
+–
+
+boxcar size adc 2
+
+u
+
+(1.0, 1000.0)
+
+1
+
+640
+
+2
+
+–
+
+–
+
+boxcar size adc 3
+
+u
+
+(1.0, 1000.0)
+
+1
+
+642
+
+2
+
+–
+
+–
+
+boxcar size adc 4
+
+u
+
+(1.0, 1000.0)
+
+1
+
+644
+
+2
+
+–
+
+–
+
+boxcar size adc 5
+
+u
+
+(1.0, 1000.0)
+
+1
+
+646
+
+2
+
+–
+
+–
+
+15
+
+© 2024 StarSpec Technologies Inc. All rights reserved.
+
+current az
+
+d
+
+(-360.0, 360.0)
+
+1
+
+648
+
+8
+
+–
+
+–
+
+offset az
+
+d
+
+(-360.0, 360.0)
+
+1
+
+656
+
+8
+
+–
+
+–
+
+best az
+
+d
+
+(0.0, 360.0)
+
+1
+
+664
+
+8
+
+Angle
+
+deg
+
+best el
+
+d
+
+(0.0, 360.0)
+
+1
+
+672
+
+8
+
+Angle
+
+deg
+
+timestamp gps
+
+d
+
+–
+
+1
+
+680
+
+8
+
+Time
+
+s
+
+lat gps
+
+d
+
+–
+
+1
+
+688
+
+8
+
+–
+
+–
+
+lon gps
+
+d
+
+–
+
+1
+
+694
+
+8
+
+–
+
+–
+
+alt gps
+
+d
+
+–
+
+1
+
+704
+
+8
+
+–
+
+–
+
+baud gps
+
+i
+
+(0.0, 115200.0)
+
+1
+
+712
+
+4
+
+–
+
+–
+
+ra sun gps
+
+d
+
+–
+
+1
+
+716
+
+8
+
+–
+
+–
+
+dec sun gps
+
+d
+
+–
+
+1
+
+724
+
+8
+
+–
+
+–
+
+az sun gps
+
+d
+
+–
+
+1
+
+732
+
+8
+
+–
+
+–
+
+el sun gps
+
+d
+
+–
+
+1
+
+740
+
+8
+
+–
+
+–
+
+ha sun gps
+
+d
+
+–
+
+1
+
+748
+
+8
+
+–
+
+–
+
+array tip
+
+d
+
+–
+
+1
+
+756
+
+8
+
+–
+
+–
+
+array tilt
+
+d
+
+–
+
+1
+
+764
+
+8
+
+–
+
+–
+
+pos table
+
+d
+
+–
+
+1
+
+772
+
+8
+
+Angle
+
+deg
+
+last time table
+
+d
+
+–
+
+1
+
+780
+
+8
+
+Time
+
+s
+
+at target table
+
+c
+
+–
+
+1
+
+788
+
+1
+
+–
+
+–
+
+cmd position table
+
+d
+
+(-360.0, 360.0)
+
+1
+
+789
+
+8
+
+Angle
+
+deg
+
+cmd speed table
+
+d
+
+–
+
+(0.0, 90.0)
+
+797
+
+8
+
+Speed
+
+deg/s
+
+set pos table
+
+d
+
+(-360.0, 360.0)
+
+1
+
+805
+
+8
+
+Angle
+
+deg
+
+cycle start table
+
+d
+
+(-360.0, 360.0)
+
+1
+
+813
+
+8
+
+Angle
+
+deg
+
+cycle end table
+
+d
+
+(-360.0, 360.0)
+
+1
+
+821
+
+8
+
+Angle
+
+deg
+
+cycles left table
+
+i
+
+–
+
+1
+
+829
+
+4
+
+–
+
+cycles

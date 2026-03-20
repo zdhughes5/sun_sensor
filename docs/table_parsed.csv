@@ -1,0 +1,135 @@
+name,type,min_max,spf,start_byte,bytes,description,units
+v_x1_pss_0,d,"(0.0, 50.0)",1,0,8,Voltage,V
+v_x2_pss_0,d,"(0.0, 50.0)",1,8,8,Voltage,V
+v_y1_pss_0,d,"(0.0, 50.0)",1,16,8,Voltage,V
+v_y2_pss_0,d,"(0.0, 50.0)",1,24,8,Voltage,V
+v_sum_pss_0,d,"(0.0, 50.0)",1,32,8,Voltage,V
+thresh_pss_0,d,"(0.0, 10.0)",1,40,8,threshold,--
+radius_pss_0,d,"(0.0, 20.0)",1,48,8,radius,--
+good_pss_0,c,,1,56,1,good flag,--
+x_raw_pss_0,d,,1,57,8,Raw X,--
+y_raw_pss_0,d,,1,65,8,Raw Y,--
+x_corr_pss_0,d,,1,73,8,Corrected X,--
+y_corr_pss_0,d,,1,81,8,Corrected Y,--
+az_pss_0,d,"(0.0,360.0)",1,89,8,Azimuth,deg
+el_pss_0,d,"(0.0,360.0)",1,97,8,Elevation,deg
+valid_pss_0,c,,1,105,1,valid flag,--
+
+v_x1_pss_1,d,"(0.0, 50.0)",1,106,8,Voltage,V
+v_x2_pss_1,d,"(0.0, 50.0)",1,114,8,Voltage,V
+v_y1_pss_1,d,"(0.0, 50.0)",1,122,8,Voltage,V
+v_y2_pss_1,d,"(0.0, 50.0)",1,130,8,Voltage,V
+v_sum_pss_1,d,"(0.0, 50.0)",1,138,8,Voltage,V
+thresh_pss_1,d,"(0.0, 10.0)",1,146,8,threshold,--
+radius_pss_1,d,"(0.0, 20.0)",1,154,8,radius,--
+good_pss_1,c,,1,162,1,good flag,--
+x_raw_pss_1,d,,1,163,8,Raw X,--
+y_raw_pss_1,d,,1,171,8,Raw Y,--
+x_corr_pss_1,d,,1,179,8,Corrected X,--
+y_corr_pss_1,d,,1,187,8,Corrected Y,--
+az_pss_1,d,"(0.0,360.0)",1,195,8,Azimuth,deg
+el_pss_1,d,"(0.0,360.0)",1,203,8,Elevation,deg
+valid_pss_1,c,,1,211,1,valid flag,--
+
+v_x1_pss_2,d,"(0.0, 50.0)",1,212,8,Voltage,V
+v_x2_pss_2,d,"(0.0, 50.0)",1,220,8,Voltage,V
+v_y1_pss_2,d,"(0.0, 50.0)",1,228,8,Voltage,V
+v_y2_pss_2,d,"(0.0, 50.0)",1,236,8,Voltage,V
+v_sum_pss_2,d,"(0.0, 50.0)",1,244,8,Voltage,V
+thresh_pss_2,d,"(0.0, 10.0)",1,252,8,threshold,--
+radius_pss_2,d,"(0.0, 20.0)",1,260,8,radius,--
+good_pss_2,c,,1,268,1,good flag,--
+x_raw_pss_2,d,,1,269,8,Raw X,--
+y_raw_pss_2,d,,1,277,8,Raw Y,--
+x_corr_pss_2,d,,1,285,8,Corrected X,--
+y_corr_pss_2,d,,1,293,8,Corrected Y,--
+az_pss_2,d,"(0.0,360.0)",1,301,8,Azimuth,deg
+el_pss_2,d,"(0.0,360.0)",1,309,8,Elevation,deg
+valid_pss_2,c,,1,317,1,valid flag,--
+
+v_x1_pss_3,d,"(0.0, 50.0)",1,318,8,Voltage,V
+v_x2_pss_3,d,"(0.0, 50.0)",1,326,8,Voltage,V
+v_y1_pss_3,d,"(0.0, 50.0)",1,334,8,Voltage,V
+v_y2_pss_3,d,"(0.0, 50.0)",1,342,8,Voltage,V
+v_sum_pss_3,d,"(0.0, 50.0)",1,350,8,Voltage,V
+thresh_pss_3,d,"(0.0, 10.0)",1,358,8,threshold,--
+radius_pss_3,d,"(0.0, 20.0)",1,366,8,radius,--
+good_pss_3,c,,1,374,1,good flag,--
+x_raw_pss_3,d,,1,375,8,Raw X,--
+y_raw_pss_3,d,,1,383,8,Raw Y,--
+x_corr_pss_3,d,,1,391,8,Corrected X,--
+y_corr_pss_3,d,,1,399,8,Corrected Y,--
+az_pss_3,d,"(0.0,360.0)",1,407,8,Azimuth,deg
+el_pss_3,d,"(0.0,360.0)",1,415,8,Elevation,deg
+valid_pss_3,c,,1,423,1,valid flag,--
+
+v_x1_pss_4,d,"(0.0, 50.0)",1,424,8,Voltage,V
+v_x2_pss_4,d,"(0.0, 50.0)",1,432,8,Voltage,V
+v_y1_pss_4,d,"(0.0, 50.0)",1,440,8,Voltage,V
+v_y2_pss_4,d,"(0.0, 50.0)",1,448,8,Voltage,V
+v_sum_pss_4,d,"(0.0, 50.0)",1,456,8,Voltage,V
+thresh_pss_4,d,"(0.0, 10.0)",1,464,8,threshold,--
+radius_pss_4,d,"(0.0, 20.0)",1,472,8,radius,--
+good_pss_4,c,,1,480,1,good flag,--
+x_raw_pss_4,d,,1,481,8,Raw X,--
+y_raw_pss_4,d,,1,489,8,Raw Y,--
+x_corr_pss_4,d,,1,497,8,Corrected X,--
+y_corr_pss_4,d,,1,505,8,Corrected Y,--
+az_pss_4,d,"(0.0,360.0)",1,513,8,Azimuth,deg
+el_pss_4,d,"(0.0,360.0)",1,521,8,Elevation,deg
+valid_pss_4,c,,1,529,1,valid flag,--
+
+v_x1_pss_5,d,"(0.0, 50.0)",1,530,8,Voltage,V
+v_x2_pss_5,d,"(0.0, 50.0)",1,538,8,Voltage,V
+v_y1_pss_5,d,"(0.0, 50.0)",1,546,8,Voltage,V
+v_y2_pss_5,d,"(0.0, 50.0)",1,554,8,Voltage,V
+v_sum_pss_5,d,"(0.0, 50.0)",1,562,8,Voltage,V
+thresh_pss_5,d,"(0.0, 10.0)",1,570,8,threshold,--
+radius_pss_5,d,"(0.0, 20.0)",1,578,8,radius,--
+good_pss_5,c,,1,586,1,good flag,--
+x_raw_pss_5,d,,1,587,8,Raw X,--
+y_raw_pss_5,d,,1,595,8,Raw Y,--
+x_corr_pss_5,d,,1,603,8,Corrected X,--
+y_corr_pss_5,d,,1,611,8,Corrected Y,--
+az_pss_5,d,"(0.0,360.0)",1,619,8,Azimuth,deg
+el_pss_5,d,"(0.0,360.0)",1,627,8,Elevation,deg
+valid_pss_5,c,,1,635,1,valid flag,--
+
+boxcar_size_adc_0,u,"(1,1000)",1,636,2,Boxcar size ADC 0,--
+boxcar_size_adc_1,u,"(1,1000)",1,638,2,Boxcar size ADC 1,--
+boxcar_size_adc_2,u,"(1,1000)",1,640,2,Boxcar size ADC 2,--
+boxcar_size_adc_3,u,"(1,1000)",1,642,2,Boxcar size ADC 3,--
+boxcar_size_adc_4,u,"(1,1000)",1,644,2,Boxcar size ADC 4,--
+boxcar_size_adc_5,u,"(1,1000)",1,646,2,Boxcar size ADC 5,--
+
+current_az,d,"(-360.0,360.0)",1,648,8,Current azimuth,--
+offset_az,d,"(-360.0,360.0)",1,656,8,Az offset,--
+best_az,d,"(0.0,360.0)",1,664,8,Best azimuth,deg
+best_el,d,"(0.0,360.0)",1,672,8,Best elevation,deg
+timestamp_gps,d,,1,680,8,GPS timestamp,s
+lat_gps,d,,1,688,8,GPS latitude,--
+lon_gps,d,,1,694,8,GPS longitude,--
+alt_gps,d,,1,704,8,GPS altitude,--
+baud_gps,i,"(0.0,115200.0)",1,712,4,GPS baud,--
+
+ra_sun_gps,d,,1,716,8,Sun RA,--
+dec_sun_gps,d,,1,724,8,Sun DEC,--
+az_sun_gps,d,,1,732,8,Sun azimuth,--
+el_sun_gps,d,,1,740,8,Sun elevation,--
+ha_sun_gps,d,,1,748,8,Sun hour angle,--
+
+array_tip,d,,1,756,8,Array tip,--
+array_tilt,d,,1,764,8,Array tilt,--
+
+pos_table,d,,1,772,8,Table position,deg
+last_time_table,d,,1,780,8,Last time table,s
+at_target_table,c,,1,788,1,At target flag,--
+
+cmd_position_table,d,"(-360.0,360.0)",1,789,8,Commanded table position,deg
+cmd_speed_table,d,"(0.0,90.0)",1,797,8,Table speed,deg/s
+set_pos_table,d,"(-360.0,360.0)",1,805,8,Set position table,deg
+cycle_start_table,d,"(-360.0,360.0)",1,813,8,Cycle start table,deg
+cycle_end_table,d,"(-360.0,360.0)",1,821,8,Cycle end table,deg
+cycles_left_table,i,,1,829,4,Cycles left,cycles
+
+"Total frame size (per manual)",,,,"=833 bytes",,,
