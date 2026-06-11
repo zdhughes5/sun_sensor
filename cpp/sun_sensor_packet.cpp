@@ -125,7 +125,7 @@ namespace {
     // GPS
     constexpr size_t OFF_TIMESTAMP_GPS = 680;
     constexpr size_t OFF_LAT_GPS       = 688;
-    constexpr size_t OFF_LON_GPS       = 694;   // overlaps lat by 2 bytes per spec
+    constexpr size_t OFF_LON_GPS       = 696;
     constexpr size_t OFF_ALT_GPS       = 704;
     constexpr size_t OFF_BAUD_GPS      = 712;
     constexpr size_t OFF_RA_SUN_GPS    = 716;

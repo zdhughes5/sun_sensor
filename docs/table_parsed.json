@@ -108,7 +108,7 @@
   {"name":"best_el","type":"d","min_max":"(0.0,360.0)","spf":1,"start_byte":672,"bytes":8,"description":"Best elevation","units":"deg"},
   {"name":"timestamp_gps","type":"d","min_max":"","spf":1,"start_byte":680,"bytes":8,"description":"GPS timestamp","units":"s"},
   {"name":"lat_gps","type":"d","min_max":"","spf":1,"start_byte":688,"bytes":8,"description":"GPS latitude","units":""},
-  {"name":"lon_gps","type":"d","min_max":"","spf":1,"start_byte":694,"bytes":8,"description":"GPS longitude","units":""},
+  {"name":"lon_gps","type":"d","min_max":"","spf":1,"start_byte":696,"bytes":8,"description":"GPS longitude","units":""},
   {"name":"alt_gps","type":"d","min_max":"","spf":1,"start_byte":704,"bytes":8,"description":"GPS altitude","units":""},
   {"name":"baud_gps","type":"i","min_max":"(0.0,115200.0)","spf":1,"start_byte":712,"bytes":4,"description":"GPS baud","units":""},
 

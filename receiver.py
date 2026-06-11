@@ -13,15 +13,106 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import json
+import pathlib
 import socket
+import struct
 import sys
 import logging
 
 # Module-level logger; configured in __main__ from CLI
 logger = logging.getLogger("receiver")
 
+# Mapping from schema type codes to struct format characters
+_TYPE_FMT: dict[str, str] = {
+    "d": "d",  # 64-bit double
+    "c": "B",  # flag byte (unsigned char)
+    "u": "H",  # unsigned short
+    "i": "i",  # signed int
+}
 
-def run(bind_ip: str, bind_port: int, bufsize: int = 4096, outfile: str | None = None) -> None:
+
+def build_parser(
+    schema_path: str | pathlib.Path | None = None,
+    byte_order: str = "<",
+) -> list[dict]:
+    """Load the packet schema JSON and return a list of pre-compiled field descriptors.
+
+    Parameters
+    ----------
+    schema_path:
+        Path to the ``table_parsed.json`` schema file.  Defaults to
+        ``<script_dir>/docs/table_parsed.json``.
+    byte_order:
+        Struct byte-order prefix (default ``'<'`` for little-endian).
+
+    Returns a list of dicts, each with keys: name, fmt, start, size,
+    description, units.
+    """
+    if schema_path is None:
+        schema_path = pathlib.Path(__file__).parent / "docs" / "table_parsed.json"
+
+    with open(schema_path) as fh:
+        entries = json.load(fh)
+
+    fields: list[dict] = []
+    for entry in entries:
+        t = entry.get("type")
+        if t not in _TYPE_FMT or entry.get("start_byte") is None:
+            continue  # skip 'note' entries and anything without a byte offset
+        fields.append({
+            "name":        entry["name"],
+            "fmt":         byte_order + _TYPE_FMT[t],
+            "start":       entry["start_byte"],
+            "size":        entry["bytes"],
+            "description": entry.get("description", ""),
+            "units":       entry.get("units", ""),
+        })
+
+    logger.debug("Loaded %d fields from schema %s", len(fields), schema_path)
+    return fields
+
+
+def parse_packet(
+    data: bytes,
+    fields: list[dict],
+) -> dict[str, int | float]:
+    """Unpack a raw sun-sensor UDP payload into a ``{field_name: value}`` dict.
+
+    Parameters
+    ----------
+    data:
+        Raw bytes received from the sensor.
+    fields:
+        Pre-built field list returned by :func:`build_parser`.
+
+    Returns a flat dict mapping each field name to its unpacked numeric value.
+    Fields whose byte range falls outside *data* are silently skipped and
+    logged at DEBUG level.
+    """
+    result: dict[str, int | float] = {}
+    for field in fields:
+        end = field["start"] + field["size"]
+        if end > len(data):
+            logger.debug(
+                "Packet too short for field '%s': need %d bytes, got %d",
+                field["name"], end, len(data),
+            )
+            continue
+        (value,) = struct.unpack_from(field["fmt"], data, field["start"])
+        result[field["name"]] = value
+    return result
+
+
+def run(
+    bind_ip: str,
+    bind_port: int,
+    bufsize: int = 4096,
+    outfile: str | None = None,
+    schema_path: str | None = None,
+) -> None:
+    fields = build_parser(schema_path)
+
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind((bind_ip, bind_port))
@@ -46,11 +137,24 @@ def run(bind_ip: str, bind_port: int, bufsize: int = 4096, outfile: str | None =
                 # Log text payload (strip trailing newlines only for readability)
                 logger.info(text.rstrip("\n"))
             else:
-                # Print a short hex summary for binary payloads
-                hex_preview = data.hex()
-                if len(hex_preview) > 512:
-                    hex_preview = hex_preview[:512] + "..."
-                logger.info("hex: %s", hex_preview)
+                # Attempt structured parse; fall back to hex summary
+                parsed = parse_packet(data, fields)
+                if parsed:
+                    logger.info("Parsed %d/%d fields:", len(parsed), len(fields))
+                    for fname, val in parsed.items():
+                        # Find descriptor for units annotation
+                        logger.debug("  %-30s = %s", fname, val)
+                    # Always log a concise one-liner at INFO
+                    logger.info(
+                        "best_az=%.3f  best_el=%.3f  (use --log-level DEBUG for all fields)",
+                        parsed.get("best_az", float("nan")),
+                        parsed.get("best_el", float("nan")),
+                    )
+                else:
+                    hex_preview = data.hex()
+                    if len(hex_preview) > 512:
+                        hex_preview = hex_preview[:512] + "..."
+                    logger.info("hex: %s", hex_preview)
 
             if out_f:
                 # Simple binary append: [timestamp] [src ip:port]\n[data]\n
@@ -74,6 +178,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--port", "-p", type=int, default=53335, help="Port to bind to (default: 53335)")
     p.add_argument("--bufsize", type=int, default=4096, help="Max UDP payload size to receive")
     p.add_argument("--outfile", "-o", default=None, help="Optional file to append received datagrams to")
+    p.add_argument(
+        "--schema", "-s", default=None,
+        help="Path to table_parsed.json schema (default: docs/table_parsed.json next to this script)",
+    )
     p.add_argument("--log-level", "-l", default="INFO",
                    choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
                    help="Logging level (default: INFO)")
@@ -91,7 +199,7 @@ if __name__ == "__main__":
     logger = logging.getLogger("receiver")
 
     try:
-        run(args.bind, args.port, args.bufsize, args.outfile)
+        run(args.bind, args.port, args.bufsize, args.outfile, args.schema)
     except Exception:
         logger.exception("Unhandled error in receiver")
         sys.exit(1)

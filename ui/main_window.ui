@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sun Sensor Telemetry</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="rootLayout">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>4</number>
+    </property>
+    <!-- ── Connection bar ──────────────────────────────────── -->
+    <item>
+     <layout class="QHBoxLayout" name="connBar">
+      <item>
+       <widget class="QLabel" name="ipLabel">
+        <property name="text">
+         <string>Bind IP:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="ipEdit">
+        <property name="maximumWidth">
+         <number>140</number>
+        </property>
+        <property name="text">
+         <string>10.0.0.1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="portLabel">
+        <property name="text">
+         <string>Port:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="portEdit">
+        <property name="maximumWidth">
+         <number>70</number>
+        </property>
+        <property name="text">
+         <string>53335</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="connectBtn">
+        <property name="minimumWidth">
+         <number>100</number>
+        </property>
+        <property name="text">
+         <string>Connect</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="connSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="packetLabel">
+        <property name="text">
+         <string>Packets: 0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timestampLabel">
+        <property name="text">
+         <string>Last: —</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <!-- ── Separator ──────────────────────────────────────── -->
+    <item>
+     <widget class="QFrame" name="connSeparator">
+      <property name="frameShape">
+       <enum>QFrame::HLine</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+     </widget>
+    </item>
+    <!-- ── Tab widget ─────────────────────────────────────── -->
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <!-- Overview tab -->
+      <widget class="QWidget" name="overviewTab">
+       <attribute name="title">
+        <string>Overview</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="overviewTabLayout">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item>
+         <widget class="QScrollArea" name="overviewScroll">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <!-- Placeholder; Python replaces this with OverviewWidget -->
+          <widget class="QWidget" name="overviewScrollContents">
+           <property name="geometry">
+            <rect><x>0</x><y>0</y><width>960</width><height>640</height></rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- PSS Sensors tab -->
+      <widget class="QWidget" name="pssTab">
+       <attribute name="title">
+        <string>PSS Sensors</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="pssTabLayout">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item>
+         <widget class="QScrollArea" name="pssScroll">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <!-- Placeholder; Python replaces this with the 3x2 PSSPanel grid -->
+          <widget class="QWidget" name="pssScrollContents">
+           <property name="geometry">
+            <rect><x>0</x><y>0</y><width>960</width><height>640</height></rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- GPS & ADC tab -->
+      <widget class="QWidget" name="gpsTab">
+       <attribute name="title">
+        <string>GPS &amp; ADC</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="gpsTabLayout">
+        <property name="spacing"><number>0</number></property>
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item>
+         <widget class="QScrollArea" name="gpsScroll">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <!-- Placeholder; Python replaces this with GPSWidget -->
+          <widget class="QWidget" name="gpsScrollContents">
+           <property name="geometry">
+            <rect><x>0</x><y>0</y><width>960</width><height>640</height></rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
